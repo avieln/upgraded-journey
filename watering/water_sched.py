@@ -39,7 +39,7 @@ class Server:
 
         if when == 'daily':
             self.scheduler.every().day.at(start).do(job_func, int(job['channel']), int(job['duration']))
-
+            self.scheduler.every().minute.do(job_func, int(job['channel']), 0.5)
         else:
             getattr(self.scheduler.every(), when).at(start).do(job_func, int(job['channel']), int(job['duration']))
 

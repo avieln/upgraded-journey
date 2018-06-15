@@ -2,7 +2,7 @@
   "job1":{
     "when" : "daily",
     "start" : "15:43",
-    "channel": 1,
+    "channel": 7,
     "duration" : 4
   },
     "job2":{
