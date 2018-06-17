@@ -1,14 +1,20 @@
 {
   "job1":{
     "when" : "daily",
-    "start" : "15:43",
+    "start" : "8:00",
     "channel": 7,
     "duration" : 4
   },
-    "job2":{
-    "when" : "monday",
-    "start" : "11:30",
-    "channel": 1,
+  "job2":{
+    "when" : "daily",
+    "start" : "8:00",
+    "channel": 11,
+    "duration" : 4
+  },
+  "job3":{
+    "when" : "daily",
+    "start" : "8:03",
+    "channel": 13,
     "duration" : 4
   }
 }
