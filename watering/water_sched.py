@@ -37,13 +37,12 @@ class Server:
 
     def handle_job(self, job):
         when = job['when']
-        start = job['start']
         con = self.con
         if when == 'daily':
             logging.info('Queued a daily job on channel '+ str(job['channel']))
-            self.scheduler.every(15).seconds.do(job_func, int(job['channel']), 0.01, con)
-        else:
-            getattr(self.scheduler.every(), when).at(start).do(job_func, int(job['channel']), int(job['duration']))
+            self.scheduler.every().day.at(job['start']).do(job_func, int(job['channel']), int(job['duration']), con)
+        elif when=='every':
+            self.scheduler.every(int(job['interval'])).seconds.do(job_func, int(job['channel']), int(job['duration']),con)
 
     def run(self):
 
